@@ -5,7 +5,7 @@
  */
 package edu.unicauca.control;
 
-import edu.unicauca.datos.GestionArchivoServidor;
+import edu.unicauca.date.ManagementFilesServer;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -49,8 +49,6 @@ public class ControlCustomer extends Thread {
             out.println("name user: " + nameCustomer);
             while ((textUser = in.readLine()) != null) {
                 writeAll(nameCustomer + " :> " + textUser);
-                GestionArchivoServidor og=new GestionArchivoServidor();
-               // og.guardarChat(textoUsuario, nombreCliente);
                 
             }
         } catch (IOException e2) {
@@ -73,6 +71,8 @@ public class ControlCustomer extends Thread {
 
     private synchronized void writeCustomer(ControlCustomer control, String textUs) {
         (control.out).println(textUs);
+           //ManagementFilesServer mf=new managementFileServer();
+           //mf.saveChat(textUs, nameCustomer);
        
     }
 }
